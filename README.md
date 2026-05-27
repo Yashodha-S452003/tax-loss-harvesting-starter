@@ -1,51 +1,212 @@
-# KoinX – Tax Loss Harvesting (Starter)
+# KoinX Tax Loss Harvesting Dashboard
 
-This is a **starter code template** for the KoinX “Tax Loss Harvesting” assignment.
+A responsive and functional Tax Loss Harvesting Dashboard built using React, TypeScript, Vite, and Tailwind CSS as part of the KoinX Frontend Assignment.
 
-It includes:
-- React + TypeScript + Tailwind (Vite)
-- Mock APIs for **Holdings** + **Capital Gains**
-- Core business logic to compute the **After Harvesting** card from selected holdings
-- A responsive(ish) UI scaffold: two cards + holdings table + select all
+The application helps users analyze their crypto portfolio, track capital gains/losses, and identify potential tax-loss harvesting opportunities.
 
-## Setup
+---
+
+# 🚀 Live Demo
+
+🔗 Live Application:  
+https://tax-loss-harvesting-starter.vercel.app/
+
+---
+
+# 📌 Features
+
+- 📊 Crypto Portfolio Dashboard
+- 💰 Capital Gains & Loss Tracking
+- 📉 Tax Loss Harvesting Suggestions
+- ⚡ Responsive UI Design
+- 🔄 Mock API Integration
+- ♻️ Reusable React Components
+- 🎨 Clean and Modern Interface
+- 📱 Mobile Responsive Layout
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+- React.js
+- TypeScript
+- Vite
+- Tailwind CSS
+
+## Additional Libraries
+- Axios
+- React Hooks
+
+---
+
+# 📂 Folder Structure
+
+```txt
+tax-loss-harvesting-starter/
+│
+├── node_modules/
+│
+├── src/
+│   │
+│   ├── api/
+│   │   └── mockApi.ts
+│   │
+│   ├── components/
+│   │   ├── CapitalGainsCard.tsx
+│   │   ├── HoldingsTable.tsx
+│   │   └── SavingsBanner.tsx
+│   │
+│   ├── utils/
+│   │   ├── format.ts
+│   │   └── harvesting.ts
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── types.ts
+│
+├── public/
+│   └── screenshots/
+│       ├── dashboard.png
+│       ├── holdings.png
+│       └── savings-banner.png
+│
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/Yashodha-S452003/tax-loss-harvesting-starter.git
+```
+
+---
+
+## 2️⃣ Navigate to Project Folder
+
+```bash
+cd tax-loss-harvesting-starter
+```
+
+---
+
+## 3️⃣ Install Dependencies
 
 ```bash
 npm install
+```
+
+---
+
+## 4️⃣ Run Development Server
+
+```bash
 npm run dev
 ```
 
-Open the URL printed in your terminal (usually `http://localhost:5173`).
+The application will start at:
 
-## Where to change data
+```bash
+http://localhost:5173
+```
 
-- `src/api/mockApi.ts`  
-  Replace the dummy `HOLDINGS` and `CAPITAL_GAINS` with the exact dummy responses from the Notion doc (if required).
+---
 
-## Business logic (what to edit if your interpretation differs)
+# 📊 Application Functionality
 
-The starter follows the wording from the assignment:
+## ✅ Holdings Table
 
-- Starts with the **Pre-harvesting** capital gains API response.
-- For each selected holding:
-  - if gain > 0 → add to profits
-  - if gain < 0 → add to losses (as positive magnitude)
-- Net gain = profits − losses
-- Realised gains = ST net + LT net
+Displays:
+- Asset Name
+- Quantity
+- Buy Price
+- Current Price
+- Gain/Loss Percentage
+- Current Portfolio Value
 
-Implementation:
-- `src/utils/harvesting.ts`
+---
 
-## UI / Components
+## ✅ Capital Gains Summary
 
-- Cards: `src/components/CapitalGainsCard.tsx`
-- Holdings table: `src/components/HoldingsTable.tsx`
-- Savings banner: `src/components/SavingsBanner.tsx`
+Shows:
+- Total Investment
+- Current Portfolio Value
+- Net Profit/Loss
+- Unrealized Gains/Losses
 
-## Next steps to finish the assignment
+---
 
-1. Match spacing/colors/typography to the provided Figma.
-2. Add loader + error states per API call (currently global).
-3. Add “View All” / pagination (bonus).
-4. Deploy (Vercel/Netlify) and add screenshots + assumptions to README.
+## ✅ Tax Loss Harvesting
 
+The application identifies assets currently in loss and suggests possible tax-loss harvesting opportunities.
+
+Example Logic:
+
+```ts
+if (currentValue < investedValue) {
+   harvestable = true;
+}
+`
+
+# 📡 API Integration
+
+Mock API data is used to simulate:
+- Crypto holdings
+- Market prices
+- Portfolio performance
+
+---
+
+
+# 🧠 Assumptions
+
+- Mock portfolio data is used instead of live APIs.
+- Tax harvesting suggestions are based on unrealized losses only.
+- Authentication and backend services were outside assignment scope.
+- Prices are static/mock values for demonstration purposes.
+
+---
+
+# 🚀 Deployment
+
+The application is deployed using Vercel.
+
+Live URL:  
+https://tax-loss-harvesting-starter.vercel.app/
+
+---
+
+# 🤖 AI Assistance
+
+AI tools such as Cursor AI and Trae AI were used for:
+- UI generation
+- Code suggestions
+- Debugging assistance
+- Development acceleration
+
+All business logic and implementation were manually reviewed and customized.
+
+---
+
+# 👨‍💻 Author
+
+Yashodha S
+
+---
+
+# 📄 License
+
+This project is developed for educational and assignment purposes only.
